@@ -7,8 +7,8 @@ const projects = [
     {
         title: "E-Commerce Platform",
         desc: "A comprehensive shopping solution providing a seamless checkout flow, real-time inventory management, and a clean user interface.",
-        tech: ["MERN Stack", "Stripe", "Tailwind CSS", "Redux"],
-        github: "#",
+        tech: ["REACT", "FRAMER MOTION", "Tailwind CSS", "Redux"],
+        github: "https://github.com/TalibBaig7/ecommercenew",
         live: "https://ecommercenew-nine.vercel.app/",
         color: "bg-slate-800/50 hover:bg-slate-800",
         border: "border-slate-700"
