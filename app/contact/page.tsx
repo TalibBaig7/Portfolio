@@ -53,7 +53,7 @@ export default function ContactPage() {
 
             <div className="flex justify-center gap-6">
                 <motion.a
-                    href="https://github.com/talib-baig"
+                    href="https://github.com/TalibBaig7"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ y: -5 }}
@@ -64,7 +64,7 @@ export default function ContactPage() {
                 </motion.a>
 
                 <motion.a
-                    href="https://linkedin.com/in/talib-baig"
+                    href="https://www.linkedin.com/in/talib-baig-9a1701211/"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ y: -5 }}

@@ -31,8 +31,8 @@ export default function AboutPage() {
 
                     <div className="space-y-6">
                         {[
-                            { title: "MERN Stack Development", place: "Apna College", year: "2024" },
-                            { title: "Bachelor of Business Administration", place: "BSSS College", year: "2023" }
+                            { title: "MERN Stack Development", place: "Apna College", year: "2025" },
+                            { title: "Bachelor of Business Administration", place: "BSSS College", year: "2022" }
                         ].map((edu, i) => (
                             <div key={i} className="pl-6 border-l-2 border-purple-500/50 relative">
                                 <div className="absolute -left-[9px] top-0 w-4 h-4 bg-purple-900 rounded-full border-2 border-purple-500" />

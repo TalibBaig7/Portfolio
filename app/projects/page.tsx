@@ -9,7 +9,7 @@ const projects = [
         desc: "A comprehensive shopping solution providing a seamless checkout flow, real-time inventory management, and a clean user interface.",
         tech: ["MERN Stack", "Stripe", "Tailwind CSS", "Redux"],
         github: "#",
-        live: "#",
+        live: "https://ecommercenew-nine.vercel.app/",
         color: "bg-slate-800/50 hover:bg-slate-800",
         border: "border-slate-700"
     },
