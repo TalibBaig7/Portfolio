@@ -14,12 +14,12 @@ const projects = [
         border: "border-slate-700"
     },
 
-      {
-        title: "Task Management App",
-        desc: "Collaborative task manager with real-time updates, drag-and-drop functionality, and team chat integration.",
-        tech: ["Next.js", "Supabase", "Tailwind CSS"],
-        github: "https://github.com/yourusername/task-app",
-        live: "https://task-app.vercel.app",
+    {
+        title: "AI Powered Code Analysis",
+        desc: "An intelligent tool aimed at analyzing code quality and patterns using AI for better development workflows.",
+        tech: ["Next.js", "AI Integration", "Tailwind CSS"],
+        github: "https://github.com/TalibBaig7",
+        live: "https://ai-powered-code-analysis.vercel.app/",
         color: "bg-blue-900/50 hover:bg-blue-900",
         border: "border-blue-700"
     },
@@ -77,10 +77,10 @@ export default function ProjectsPage() {
                                 <div className="w-3 h-3 rounded-full bg-green-500/80" />
                             </div>
                             <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                                <a href={project.github} className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors">
+                                <a href={project.github} target="_blank" rel="noopener noreferrer" className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors">
                                     <Github className="w-4 h-4 text-white" />
                                 </a>
-                                <a href={project.live} className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors">
+                                <a href={project.live} target="_blank" rel="noopener noreferrer" className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors">
                                     <ArrowUpRight className="w-4 h-4 text-white" />
                                 </a>
                             </div>
