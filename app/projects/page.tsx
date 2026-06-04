@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
+import DashboardCard from "@/components/DashboardCard";
 
 const projects = [
     {
@@ -24,6 +25,30 @@ const projects = [
         border: "border-blue-700"
     },
     // Add more projects here
+];
+
+const dashboardProjects = [
+    {
+        title: "Pizza Sales Report",
+        description: "Comprehensive Power BI dashboard analyzing pizza sales trends, revenue metrics, and customer patterns across different time periods and categories.",
+        image: "/dashboards/pizza-sales.jpg",
+        link: "#",
+        tools: ["Power BI", "Data Analysis", "Visualization"]
+    },
+    {
+        title: "Data Professional Survey Breakdown",
+        description: "Interactive dashboard presenting insights from a data professional survey including salary trends, job satisfaction, and career path analysis.",
+        image: "/dashboards/data-professional.jpg",
+        link: "#",
+        tools: ["Power BI", "Survey Analysis", "Analytics"]
+    },
+    {
+        title: "HR Analytics Dashboard",
+        description: "Advanced HR metrics dashboard tracking employee attrition, department performance, salary distribution, and workforce analytics.",
+        image: "/dashboards/hr-analytics.jpg",
+        link: "#",
+        tools: ["Power BI", "HR Analytics", "KPI Tracking"]
+    }
 ];
 
 const container = {
@@ -100,6 +125,32 @@ export default function ProjectsPage() {
                         </div>
                     </motion.div>
                 ))}
+            </motion.div>
+
+            {/* Dashboard Projects Section */}
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="mt-20"
+            >
+                <span className="text-purple-400 font-bold tracking-wider uppercase text-sm mb-2 block">Secondary Projects</span>
+                <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight mb-8">
+                    Power BI Dashboards
+                </h2>
+                <p className="text-slate-400 mb-12 max-w-2xl">
+                    Data visualization projects showcasing business intelligence and analytics expertise.
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {dashboardProjects.map((dashboard, idx) => (
+                        <DashboardCard
+                            key={idx}
+                            {...dashboard}
+                            index={idx}
+                        />
+                    ))}
+                </div>
             </motion.div>
         </div>
     );
