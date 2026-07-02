@@ -37,36 +37,36 @@ const projects: Project[] = [
 ];
 
 const animationProjects: Project[] = [
-    {
-        title: "AUREN — Cold Brew Website",
-        desc: "Premium cold brew brand site with an 81-frame scroll-driven canvas animation, GSAP ScrollTrigger sequences, and full mobile responsiveness.",
-        tech: ["Vite", "GSAP", "Canvas API", "Vanilla JS"],
-        github: "https://github.com/TalibBaig7/Auren-Animation-Website",
-        live: "https://auren-animation-website.vercel.app/",
-        color: "bg-slate-800/50 hover:bg-slate-800",
-        border: "border-slate-700",
-        badge: "GSAP Animation",
-    },
-    {
-        title: "Archive Project",
-        desc: "A dynamic portfolio archiving interactive web experiences and experimental animations.",
-        tech: ["Next.js", "Framer Motion", "Tailwind CSS"],
-        github: "https://github.com/TalibBaig7",
-        live: "https://archive-4kuopsuh9-mirzatalib7415-gmailcoms-projects.vercel.app/",
-        color: "bg-indigo-900/50 hover:bg-indigo-900",
-        border: "border-indigo-700",
-        badge: "Interactive",
-    },
-    {
-        title: "K72 Website",
-        desc: "An immersive digital experience showcasing creative agency work with smooth transitions.",
-        tech: ["React", "WebGL", "GSAP"],
-        github: "https://github.com/TalibBaig7",
-        live: "https://k72website.onrender.com/",
-        color: "bg-purple-900/50 hover:bg-purple-900",
-        border: "border-purple-700",
-        badge: "Web Experience",
-    }
+  {
+    title: "AUREN — Cold Brew Website",
+    desc: "Premium cold brew brand site with an 81-frame scroll-driven canvas animation, GSAP ScrollTrigger sequences, and full mobile responsiveness.",
+    tech: ["Vite", "GSAP", "Canvas API", "Vanilla JS"],
+    github: "https://github.com/TalibBaig7/Auren-Animation-Website",
+    live: "https://auren-animation-website.vercel.app/",
+    color: "bg-slate-800/50 hover:bg-slate-800",
+    border: "border-slate-700",
+    badge: "GSAP Animation",
+  },
+  {
+    title: "Archive Project",
+    desc: "A dynamic portfolio archiving interactive web experiences and experimental animations.",
+    tech: ["Next.js", "Framer Motion", "Tailwind CSS"],
+    github: "https://github.com/TalibBaig7/Archive",
+    live: "https://archive-sage-one.vercel.app/",
+    color: "bg-indigo-900/50 hover:bg-indigo-900",
+    border: "border-indigo-700",
+    badge: "Interactive",
+  },
+  {
+    title: "K72 Website",
+    desc: "An immersive digital experience showcasing creative agency work with smooth transitions.",
+    tech: ["React", "WebGL", "GSAP"],
+    github: "https://github.com/TalibBaig7",
+    live: "https://k72website.onrender.com/",
+    color: "bg-purple-900/50 hover:bg-purple-900",
+    border: "border-purple-700",
+    badge: "Web Experience",
+  },
 ];
 
 const dashboardProjects = [
