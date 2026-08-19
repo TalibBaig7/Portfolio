@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MousePointerClick } from "lucide-react";
 
 interface DashboardCardProps {
   title: string;
@@ -75,8 +75,19 @@ export default function DashboardCard({
           </div>
         </div>
 
+        {/* Click Me Button */}
+        <div className="mt-4">
+          <button
+            onClick={() => window.open(link, "_blank")}
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-500/40 rounded-xl text-cyan-300 text-sm font-bold uppercase tracking-wider transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20"
+          >
+            <MousePointerClick className="w-4 h-4" />
+            Click Me
+          </button>
+        </div>
+
         {/* View Dashboard Link Button */}
-        <div>
+        <div className="mt-3">
           <a
             href={link}
             target="_blank"

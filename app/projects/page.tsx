@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, ArrowUpRight } from "lucide-react";
+import { Github, ArrowUpRight, MousePointerClick } from "lucide-react";
 import DashboardCard from "@/components/DashboardCard";
 
 type Project = {
@@ -100,6 +100,7 @@ const dashboardProjects = [
     description:
       "Advanced HR metrics dashboard tracking employee attrition, department performance, salary distribution, and workforce analytics.",
     image: "/dashboards/hr-analytics.jpg",
+    
     link: "https://github.com/TalibBaig7/Power_bi_dashboard_projects/blob/main/HR%20ANALYTICS%20DASHBOARD.pbix",
     tools: ["Power BI", "HR Analytics", "KPI Tracking"],
   },
@@ -217,6 +218,17 @@ export default function ProjectsPage() {
                 </span>
               ))}
             </div>
+
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                window.open(project.live || project.github, "_blank");
+              }}
+              className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 bg-purple-500/20 hover:bg-purple-500/30 border border-purple-500/40 rounded-xl text-purple-300 text-sm font-bold uppercase tracking-wider transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20"
+            >
+              <MousePointerClick className="w-4 h-4" />
+              Click Me
+            </button>
           </motion.div>
         ))}
       </motion.div>
@@ -317,6 +329,17 @@ export default function ProjectsPage() {
                   </span>
                 ))}
               </div>
+
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open(project.live || project.github, "_blank");
+                }}
+                className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 bg-purple-500/20 hover:bg-purple-500/30 border border-purple-500/40 rounded-xl text-purple-300 text-sm font-bold uppercase tracking-wider transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20"
+              >
+                <MousePointerClick className="w-4 h-4" />
+                Click Me
+              </button>
             </motion.div>
           ))}
         </motion.div>
