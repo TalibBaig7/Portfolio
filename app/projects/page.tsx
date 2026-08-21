@@ -227,7 +227,7 @@ export default function ProjectsPage() {
               className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 bg-purple-500/20 hover:bg-purple-500/30 border border-purple-500/40 rounded-xl text-purple-300 text-sm font-bold uppercase tracking-wider transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20"
             >
               <MousePointerClick className="w-4 h-4" />
-              Click Me
+              VIEW DETAIL
             </button>
           </motion.div>
         ))}
