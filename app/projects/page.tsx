@@ -21,7 +21,7 @@ const projects: Project[] = [
     desc: "An AI-powered expense tracker with budget planning, category management, and OpenAI-driven spending insights on a fully responsive dashboard.",
     tech: ["REACT", "NODE.JS", "PostgreSQL", "Tailwind CSS"],
     github: "https://github.com/TalibBaig7/Ai-Expense-Tracker",
-    live: "https://frontend-l5m5fjmvm-mirzatalib7415-gmailcoms-projects.vercel.app",
+    live: "https://frontend-two-wine-81.vercel.app",
     color: "bg-slate-800/50 hover:bg-slate-800",
     border: "border-slate-700",
   },
