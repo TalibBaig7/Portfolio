@@ -10,9 +10,9 @@ export default function AboutPage() {
 
                 {/* Left Col: Intro & Education */}
                 <motion.div
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0.5, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.25 }}
                 >
                     <span className="text-purple-400 font-bold tracking-wider uppercase text-sm mb-2 block">About Me</span>
                     <h1 className="text-4xl md:text-5xl font-black text-white tracking-tight mb-8">
@@ -46,9 +46,9 @@ export default function AboutPage() {
 
                 {/* Right Col: Skills */}
                 <motion.div
-                    initial={{ opacity: 0, x: 20 }}
+                    initial={{ opacity: 0.5, x: 10 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
+                    transition={{ duration: 0.25, delay: 0.08 }}
                 >
                     <div className="bg-white/5 backdrop-blur-sm rounded-[2.5rem] p-8 border border-white/10">
                         <h2 className="text-2xl font-black text-white mb-8">Technical Expertise</h2>

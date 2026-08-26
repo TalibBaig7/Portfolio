@@ -3,6 +3,15 @@
 import { motion } from "framer-motion";
 import { Github, ArrowUpRight, MousePointerClick } from "lucide-react";
 import DashboardCard from "@/components/DashboardCard";
+import {
+  fadeUp,
+  staggerContainer,
+  staggerItem,
+  pillContainer,
+  pillItem,
+  cardHover,
+  cardHoverTransition,
+} from "@/lib/animations";
 
 type Project = {
   title: string;
@@ -115,29 +124,10 @@ const dashboardProjects = [
   },
 ];
 
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
-};
-
 export default function ProjectsPage() {
   return (
     <div className="max-w-7xl mx-auto px-6 py-12">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="mb-16"
-      >
+      <motion.div variants={fadeUp} initial="hidden" animate="show" className="mb-16">
         <span className="text-purple-400 font-bold tracking-wider uppercase text-sm mb-2 block">
           Portfolio
         </span>
@@ -152,18 +142,20 @@ export default function ProjectsPage() {
 
       <motion.div
         className="grid grid-cols-1 md:grid-cols-2 gap-8"
-        variants={container}
+        variants={staggerContainer}
         initial="hidden"
         animate="show"
       >
         {projects.map((project, idx) => (
           <motion.div
             key={idx}
-            variants={item}
+            variants={staggerItem}
+            whileHover={cardHover}
+            transition={cardHoverTransition}
             onClick={() =>
               window.open(project.live || project.github, "_blank")
             }
-            className={`group relative rounded-[2.5rem] p-8 ${project.color} ${project.border} border backdrop-blur-sm transition-all duration-300 cursor-pointer`}
+            className={`group relative rounded-[2.5rem] p-8 ${project.color} ${project.border} border backdrop-blur-sm transition-colors duration-300 cursor-pointer hover:shadow-2xl hover:shadow-purple-500/10`}
           >
             {/* macOS dots */}
             <div className="flex justify-between items-start mb-6">
@@ -217,16 +209,23 @@ export default function ProjectsPage() {
               {project.desc}
             </p>
 
-            <div className="flex flex-wrap gap-2">
+            <motion.div
+              className="flex flex-wrap gap-2"
+              variants={pillContainer}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+            >
               {project.tech.map((t) => (
-                <span
+                <motion.span
                   key={t}
+                  variants={pillItem}
                   className="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-xs font-bold text-slate-300 uppercase tracking-wide"
                 >
                   {t}
-                </span>
+                </motion.span>
               ))}
-            </div>
+            </motion.div>
 
             <button
               onClick={(e) => {
@@ -236,7 +235,7 @@ export default function ProjectsPage() {
               className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 bg-purple-500/20 hover:bg-purple-500/30 border border-purple-500/40 rounded-xl text-purple-300 text-sm font-bold uppercase tracking-wider transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20"
             >
               <MousePointerClick className="w-4 h-4" />
-              VIEW DETAIL
+              VIEW PROJECT
             </button>
           </motion.div>
         ))}
@@ -244,8 +243,9 @@ export default function ProjectsPage() {
 
       {/* Animation Projects Section */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
         viewport={{ once: true }}
         className="mt-20"
       >
@@ -262,7 +262,7 @@ export default function ProjectsPage() {
 
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-8"
-          variants={container}
+          variants={staggerContainer}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
@@ -270,11 +270,13 @@ export default function ProjectsPage() {
           {animationProjects.map((project, idx) => (
             <motion.div
               key={idx}
-              variants={item}
+              variants={staggerItem}
+              whileHover={cardHover}
+              transition={cardHoverTransition}
               onClick={() =>
                 window.open(project.live || project.github, "_blank")
               }
-              className={`group relative rounded-[2.5rem] p-8 ${project.color} ${project.border} border backdrop-blur-sm transition-all duration-300 cursor-pointer`}
+              className={`group relative rounded-[2.5rem] p-8 ${project.color} ${project.border} border backdrop-blur-sm transition-colors duration-300 cursor-pointer hover:shadow-2xl hover:shadow-purple-500/10`}
             >
               {/* macOS dots */}
               <div className="flex justify-between items-start mb-6">
@@ -328,16 +330,23 @@ export default function ProjectsPage() {
                 {project.desc}
               </p>
 
-              <div className="flex flex-wrap gap-2">
+              <motion.div
+                className="flex flex-wrap gap-2"
+                variants={pillContainer}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+              >
                 {project.tech.map((t) => (
-                  <span
+                  <motion.span
                     key={t}
+                    variants={pillItem}
                     className="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-xs font-bold text-slate-300 uppercase tracking-wide"
                   >
                     {t}
-                  </span>
+                  </motion.span>
                 ))}
-              </div>
+              </motion.div>
 
               <button
                 onClick={(e) => {
@@ -347,7 +356,7 @@ export default function ProjectsPage() {
                 className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 bg-purple-500/20 hover:bg-purple-500/30 border border-purple-500/40 rounded-xl text-purple-300 text-sm font-bold uppercase tracking-wider transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20"
               >
                 <MousePointerClick className="w-4 h-4" />
-                Click Me
+                VIEW PROJECT
               </button>
             </motion.div>
           ))}
@@ -356,8 +365,9 @@ export default function ProjectsPage() {
 
       {/* Dashboard Projects Section */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
         viewport={{ once: true }}
         className="mt-20"
       >

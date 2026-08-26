@@ -54,7 +54,7 @@ export function Navbar() {
                         {/* Logo */}
                         <Link href="/" className="relative z-10">
                             <motion.div
-                                className="h-10 w-10 bg-white rounded-xl flex items-center justify-center text-slate-900 font-black text-lg"
+                                className="h-10 w-10 bg-white rounded-xl flex items-center justify-center text-slate-900 font-black text-lg font-heading"
                                 whileHover={{ rotate: 10 }}
                                 whileTap={{ scale: 0.9 }}
                             >

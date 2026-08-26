@@ -38,9 +38,9 @@ export default function HomePage() {
 
       <div className="relative max-w-5xl mx-auto px-6 py-12 flex flex-col items-center text-center">
         <motion.div
-          initial={{ scale: 0, opacity: 0 }}
+          initial={{ scale: 0.9, opacity: 0.5 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.5, type: "spring" }}
+          transition={{ duration: 0.3, type: "spring" }}
           className="mb-8"
         >
           {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 shadow-sm backdrop-blur-sm">
@@ -54,18 +54,18 @@ export default function HomePage() {
 
         <motion.h1
           className="text-6xl md:text-8xl font-black tracking-tighter mb-6 text-white"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0.5, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
+          transition={{ duration: 0.25, delay: 0.05 }}
         >
           <TypewriterText text="Talib Baig" />
         </motion.h1>
 
         <motion.div
           className="flex flex-col md:flex-row items-center gap-3 mb-10 text-xl md:text-2xl font-medium text-slate-400"
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 0.5 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
+          transition={{ duration: 0.2, delay: 0.1 }}
         >
           <span>Full Stack Developer</span>
           <span className="hidden md:block w-1.5 h-1.5 rounded-full bg-slate-700" />
@@ -74,19 +74,20 @@ export default function HomePage() {
 
         <motion.p
           className="text-slate-300 leading-relaxed text-lg max-w-2xl px-4 mb-12"
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 0.5 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.4 }}
+          transition={{ duration: 0.2, delay: 0.15 }}
         >
-          I craft robust digital solutions using the <span className="text-purple-400 font-bold">MERN</span> stack.
-          Focusing on performance, aesthetics, and business impact.
+          I build full-stack products — from a JWT-secured trading dashboard to
+          AI-driven tools — with a focus on{" "}
+          <span className="text-purple-400 font-bold">production-ready code</span>, not just demos.
         </motion.p>
 
         <motion.div
           className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0.5, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.6 }}
+          transition={{ duration: 0.2, delay: 0.2 }}
         >
           <Link href="/projects" className="group relative px-8 py-4 bg-white text-slate-900 rounded-2xl font-bold flex items-center justify-center gap-2 overflow-hidden hover:bg-slate-100 transition-colors">
             <span className="relative z-10">View My Work</span>

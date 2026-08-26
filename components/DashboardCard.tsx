@@ -23,21 +23,22 @@ export default function DashboardCard({
 }: DashboardCardProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0.5, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
+      transition={{ duration: 0.25, delay: index * 0.05 }}
+      whileHover={{ scale: 1.02, y: -4 }}
       className="group relative rounded-[2rem] overflow-hidden bg-gradient-to-br from-cyan-900/50 to-blue-900/50 border border-cyan-700/50 hover:border-cyan-600 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 backdrop-blur-sm flex flex-col h-full"
     >
       {/* IMAGE CONTAINER (h-64) */}
       <div className="relative w-full h-64 overflow-hidden bg-slate-950/50">
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0.5, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{
-            duration: 0.8,
-            delay: index * 0.1 + 0.3,
+            duration: 0.3,
+            delay: index * 0.05 + 0.05,
             ease: "easeOut",
           }}
           className="relative w-full h-full"
@@ -75,14 +76,14 @@ export default function DashboardCard({
           </div>
         </div>
 
-        {/* Click Me Button */}
+        {/* View Project Button */}
         <div className="mt-4">
           <button
             onClick={() => window.open(link, "_blank")}
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-500/40 rounded-xl text-cyan-300 text-sm font-bold uppercase tracking-wider transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20"
           >
             <MousePointerClick className="w-4 h-4" />
-            Click Me
+            VIEW PROJECT
           </button>
         </div>
 
