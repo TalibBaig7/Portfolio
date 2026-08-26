@@ -43,6 +43,15 @@ const projects: Project[] = [
     color: "bg-blue-900/50 hover:bg-blue-900",
     border: "border-blue-700",
   },
+  {
+    title: "Zerodha Clone",
+    desc: "A full-stack clone of the Zerodha trading platform with live market dashboard, watchlist, order placement, and JWT-based authentication.",
+    tech: ["React", "Node.js", "Express", "MongoDB"],
+    github: "https://github.com/TalibBaig7",
+    live: "https://zerodha-clone-frontend-08fo.onrender.com/",
+    color: "bg-orange-900/50 hover:bg-orange-900",
+    border: "border-orange-700",
+  },
 ];
 
 const animationProjects: Project[] = [
