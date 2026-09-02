@@ -4,18 +4,61 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const navItems = [
-    { name: "Home", path: "/" },
-    { name: "Projects", path: "/projects" },
-    { name: "About", path: "/about" },
-    { name: "Contact", path: "/contact" },
+    { name: "Home", id: "hero", path: "/" },
+    { name: "About", id: "about", path: "/#about" },
+    { name: "Projects", id: "projects", path: "/#projects" },
+    { name: "Contact", id: "contact", path: "/#contact" },
 ];
 
 export function Navbar() {
     const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState("hero");
+
+    useEffect(() => {
+        if (pathname !== "/") return;
+
+        const sectionIds = ["hero", "about", "projects", "contact"];
+        const handleScroll = () => {
+            // If near bottom of the page, activate contact
+            if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 60) {
+                setActiveSection("contact");
+                return;
+            }
+
+            const scrollPosition = window.scrollY + 160;
+
+            for (let i = sectionIds.length - 1; i >= 0; i--) {
+                const id = sectionIds[i];
+                const element = document.getElementById(id);
+                if (element) {
+                    if (element.offsetTop <= scrollPosition) {
+                        setActiveSection(id);
+                        break;
+                    }
+                }
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        handleScroll();
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [pathname]);
+
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+        setIsOpen(false);
+        if (pathname === "/") {
+            e.preventDefault();
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+                window.history.pushState(null, "", id === "hero" ? "/" : `#${id}`);
+            }
+        }
+    };
 
     return (
         <>
@@ -32,9 +75,9 @@ export function Navbar() {
                 <div className="flex flex-col space-y-6 pt-32 px-6">
                     {navItems.map((item) => (
                         <Link
-                            key={item.path}
+                            key={item.id}
                             href={item.path}
-                            onClick={() => setIsOpen(false)}
+                            onClick={(e) => handleNavClick(e, item.id)}
                             className="text-2xl font-black text-white flex items-center justify-between group"
                         >
                             {item.name}
@@ -52,9 +95,13 @@ export function Navbar() {
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="flex items-center justify-between h-20">
                         {/* Logo */}
-                        <Link href="/" className="relative z-10">
+                        <Link
+                            href="/"
+                            onClick={(e) => handleNavClick(e, "hero")}
+                            className="relative z-10"
+                        >
                             <motion.div
-                                className="h-10 w-10 bg-white rounded-xl flex items-center justify-center text-slate-900 font-black text-lg font-heading"
+                                className="h-10 w-10 bg-white rounded-xl flex items-center justify-center text-slate-900 font-black text-lg font-heading cursor-pointer"
                                 whileHover={{ rotate: 10 }}
                                 whileTap={{ scale: 0.9 }}
                             >
@@ -65,18 +112,37 @@ export function Navbar() {
                         {/* Desktop Navigation */}
                         <div className="hidden md:flex items-center space-x-8">
                             {navItems.map((item) => {
-                                const isActive = pathname === item.path;
+                                const isActive =
+                                    pathname === "/"
+                                        ? activeSection === item.id
+                                        : pathname.startsWith(`/${item.id}`) ||
+                                          (item.id === "hero" && pathname === "/");
+
                                 return (
-                                    <Link key={item.path} href={item.path} className="relative group">
-                                        <span className={`text-sm font-bold tracking-wide transition-colors ${isActive ? "text-white" : "text-slate-400 group-hover:text-white"
-                                            }`}>
+                                    <Link
+                                        key={item.id}
+                                        href={item.path}
+                                        onClick={(e) => handleNavClick(e, item.id)}
+                                        className="relative group"
+                                    >
+                                        <span
+                                            className={`text-sm font-bold tracking-wide transition-colors ${
+                                                isActive
+                                                    ? "text-white"
+                                                    : "text-slate-400 group-hover:text-white"
+                                            }`}
+                                        >
                                             {item.name}
                                         </span>
                                         {isActive && (
                                             <motion.div
                                                 layoutId="navbar-indicator"
                                                 className="absolute -bottom-2 left-0 right-0 h-0.5 bg-purple-500 rounded-full"
-                                                transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                                                transition={{
+                                                    type: "spring",
+                                                    stiffness: 380,
+                                                    damping: 30,
+                                                }}
                                             />
                                         )}
                                     </Link>
@@ -86,6 +152,7 @@ export function Navbar() {
 
                         {/* Mobile Menu Button */}
                         <button
+                            aria-label="Toggle navigation menu"
                             className="md:hidden relative z-10 p-2 text-white"
                             onClick={() => setIsOpen(!isOpen)}
                         >

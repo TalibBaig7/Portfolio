@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 export function Footer() {
     return (
         <footer className="py-8 border-t border-slate-800 bg-transparent">
