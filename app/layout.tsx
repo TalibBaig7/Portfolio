@@ -51,7 +51,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           />
 
           <Navbar />
-          <main className="relative z-10 flex-grow pt-20 pb-20">
+          <main className="relative z-10 grow pt-20 pb-20">
             <PageTransition>{children}</PageTransition>
           </main>
           <Footer />

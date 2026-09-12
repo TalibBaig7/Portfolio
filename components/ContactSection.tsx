@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, Linkedin, Github } from "lucide-react";
+import { Mail, Phone, Linkedin, Github, Download } from "lucide-react";
 
 export function ContactSection() {
   return (
@@ -22,6 +22,19 @@ export function ContactSection() {
           I&apos;m currently available for freelance projects and full-time opportunities.
           If you have a project that needs some creative touch, let me know!
         </p>
+
+        <motion.a
+          href="/api/resume-download"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.05 }}
+          whileHover={{ y: -2 }}
+          className="mt-8 inline-flex items-center gap-2 px-8 py-4 bg-purple-500 text-white rounded-2xl font-bold hover:bg-purple-400 transition-colors shadow-lg shadow-purple-500/20"
+        >
+          <Download className="w-5 h-5" />
+          Download Resume
+        </motion.a>
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">

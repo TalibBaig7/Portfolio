@@ -24,7 +24,7 @@ function TypewriterText({ text }: { text: string }) {
       <motion.span
         animate={{ opacity: [1, 0] }}
         transition={{ duration: 0.5, repeat: Infinity, repeatType: "reverse" }}
-        className="inline-block w-[3px] h-[1em] bg-purple-500 ml-1 align-middle"
+        className="inline-block w-0.75 h-[1em] bg-purple-500 ml-1 align-middle"
       />
     </span>
   );

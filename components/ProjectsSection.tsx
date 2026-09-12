@@ -47,10 +47,10 @@ const projects: Project[] = [
     title: "AI Powered Code Analysis",
     desc: "An intelligent tool aimed at analyzing code quality and patterns using AI for better development workflows.",
     tech: ["Next.js", "AI Integration", "Tailwind CSS"],
-    github: "https://github.com/TalibBaig7",
+    github: "https://github.com/TalibBaig7/AI-Powered-Code-Analysis",
     live: "https://ai-powered-code-analysis.vercel.app/",
-    color: "bg-blue-900/50 hover:bg-blue-900",
-    border: "border-blue-700",
+    color: "bg-slate-800/50 hover:bg-slate-800",
+    border: "border-slate-700",
   },
   {
     title: "Zerodha Clone",
@@ -58,8 +58,8 @@ const projects: Project[] = [
     tech: ["React", "Node.js", "Express", "MongoDB"],
     github: "https://github.com/TalibBaig7",
     live: "https://zerodha-clone-frontend-08fo.onrender.com/",
-    color: "bg-orange-900/50 hover:bg-orange-900",
-    border: "border-orange-700",
+    color: "bg-slate-800/50 hover:bg-slate-800",
+    border: "border-slate-700",
   },
 ];
 
@@ -93,6 +93,16 @@ const animationProjects: Project[] = [
     color: "bg-purple-900/50 hover:bg-purple-900",
     border: "border-purple-700",
     badge: "Web Experience",
+  },
+  {
+    title: "The Sketchbook",
+    desc: "A fashion sketchbook showcase with hover-triggered preview cards that swap images and reveal handwritten-style alt text, built on scroll-linked GSAP animations.",
+    tech: ["GSAP", "Vite", "Lenis"],
+    github: "https://github.com/TalibBaig7/The-Sketchbook",
+    live: "https://the-sketchbook-iota.vercel.app/",
+    color: "bg-pink-900/50 hover:bg-pink-900",
+    border: "border-pink-700",
+    badge: "Interactive Animation",
   },
 ];
 
