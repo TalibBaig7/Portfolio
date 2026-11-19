@@ -53,14 +53,15 @@ const projects: Project[] = [
     border: "border-slate-700",
   },
   {
-    title: "Zerodha Clone",
-    desc: "A full-stack clone of the Zerodha trading platform with live market dashboard, watchlist, order placement, and JWT-based authentication.",
-    tech: ["React", "Node.js", "Express", "MongoDB"],
-    github: "https://github.com/TalibBaig7",
-    live: "https://zerodha-clone-frontend-08fo.onrender.com/",
-    color: "bg-slate-800/50 hover:bg-slate-800",
-    border: "border-slate-700",
+    title: "Talentry – Job Portal",
+    desc: "A full-stack job portal where candidates search, apply and track applications, recruiters manage hiring on a drag-and-drop pipeline with interview scheduling, and admins moderate the platform.",
+    tech: ["React", "Django REST Framework", "PostgreSQL", "Tailwind CSS"],
+    github: "https://github.com/TalibBaig7/Jobportal",
+    live: "https://talentry-sooty.vercel.app/",
+    color: "bg-blue-900/30 hover:bg-blue-900/50",
+    border: "border-blue-800",
   },
+
 ];
 
 const animationProjects: Project[] = [
